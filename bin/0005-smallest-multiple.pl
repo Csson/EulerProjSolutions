@@ -91,27 +91,6 @@ sub get_primes {
 }
 
 
-
-sub main2 {
-    
-    my $limit = $ARGV[0] // 10;
-    my $number = 1;
-    my %found = ();
-    NUMBER:
-    while(++$number) {
-        foreach my $div (1 .. $limit) {
-            next NUMBER if $number % $div != 0;
-            if(!exists $found{$div}) {
-                $found{$div} = $number;
-                say "$div: $number";
-            }
-        }
-        last NUMBER;
-    }
-    say "Lowest number evenly divisible by every number 1..$limit: " . $number;
-    
-}
-
 =pod
 
 Problem 5 - Smallest multiple
