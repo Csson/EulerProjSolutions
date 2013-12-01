@@ -20,12 +20,12 @@ sub main {
 }
 
 sub fibo {
-	my $fibos = shift;
+    my $fibos = shift;
 
-	my $next_fibo = $fibos->[-1] + $fibos->[-2];
-	return $fibos if $next_fibo > $limit;
-	push @{ $fibos} => $next_fibo;
-	fibo($fibos);
+    my $next_fibo = $fibos->[-1] + $fibos->[-2];
+    return $fibos if $next_fibo > $limit;
+    push @{ $fibos} => $next_fibo;
+    fibo($fibos);
 }
 
 
