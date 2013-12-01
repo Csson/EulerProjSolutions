@@ -13,7 +13,7 @@ say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
 sub main {
     PALINDROME:
     foreach my $i (reverse 100 .. 999) {
-        foreach my $j (reverse 100 .. 999) {
+        foreach my $j (reverse 100 .. $i) {
             my $sum = $i * $j;
             if($sum eq reverse $sum) {
                 say "$i * $j = $sum";
