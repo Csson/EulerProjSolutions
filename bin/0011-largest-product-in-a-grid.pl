@@ -20,33 +20,35 @@ sub main {
                   rightdown  => 0,
                 };
     
-    foreach my $rindex (0 .. scalar @{ $grid } - 1) {
-        my $row = $grid->[ $rindex ];
+    foreach my $row (0 .. scalar @{ $grid } - 1) {
         
-        foreach my $cindex (0 .. scalar @{ $row } - 1) {
-            if($rindex < scalar @{ $grid } - 4) {
+        foreach my $column (0 .. scalar @{ $row } - 1) {
+            
+            if($row < scalar @{ $grid } - 4) {
                 my $vert = 1;
-                map { $vert *= $grid->[$_][ $cindex ] } ($rindex, $rindex + 1, $rindex + 2, $rindex + 3);
+                map { $vert *= $grid->[$_][ $column ] } ($row, $row + 1, $row + 2, $row + 3);
                 $maxes->{'vertical'} = $vert if $vert > $maxes->{'vertical'};
+                
+                if($column < scalar @{ $grid->[$row]} - 4) {
+                    my $rightdown = $grid->[ $row ][ $column ] 
+                                  * $grid->[ $row + 1 ][ $column + 1 ] 
+                                  * $grid->[ $row + 2 ][ $column + 2 ] 
+                                  * $grid->[ $row + 3 ][ $column + 3 ];
+                    $maxes->{'rightdown'} = $rightdown if $rightdown > $maxes->{'rightdown'};
+                }
             }
-            if($cindex < scalar @{ $grid->[$rindex]} - 4) {
+            if($column < scalar @{ $grid->[$row]} - 4) {
                 my $horiz = 1;
-                map { $horiz *= $grid->[$rindex][ $_ ] } ($cindex, $cindex + 1, $cindex + 2, $cindex + 3);
+                map { $horiz *= $grid->[$row][ $_ ] } ($column, $column + 1, $column + 2, $column + 3);
                 $maxes->{'horizontal'} = $horiz if $horiz > $maxes->{'horizontal'};
-            }
-            if($rindex - 3 >= 0 && $cindex < scalar @{ $grid->[$rindex]} - 4) {
-                my $rightup = $grid->[ $rindex ][ $cindex ] 
-                            * $grid->[ $rindex - 1 ][ $cindex + 1 ] 
-                            * $grid->[ $rindex - 2 ][ $cindex + 2 ] 
-                            * $grid->[ $rindex - 3 ][ $cindex + 3 ];
-                $maxes->{'rightup'} = $rightup if $rightup > $maxes->{'rightup'};
-            }
-            if($rindex < scalar @{ $grid->[$rindex]} - 4 && $cindex < scalar @{ $grid->[$rindex]} - 4) {
-                my $rightdown = $grid->[ $rindex ][ $cindex ] 
-                              * $grid->[ $rindex + 1 ][ $cindex + 1 ] 
-                              * $grid->[ $rindex + 2 ][ $cindex + 2 ] 
-                              * $grid->[ $rindex + 3 ][ $cindex + 3 ];
-                $maxes->{'rightdown'} = $rightdown if $rightdown > $maxes->{'rightdown'};
+                
+                if($row >= 3) {
+                    my $rightup = $grid->[ $row ][ $column ] 
+                                * $grid->[ $row - 1 ][ $column + 1 ] 
+                                * $grid->[ $row - 2 ][ $column + 2 ] 
+                                * $grid->[ $row - 3 ][ $column + 3 ];
+                    $maxes->{'rightup'} = $rightup if $rightup > $maxes->{'rightup'};
+                }
             }
         }
     }
