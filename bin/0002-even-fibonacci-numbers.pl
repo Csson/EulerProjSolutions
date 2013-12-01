@@ -13,19 +13,19 @@ main();
 say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
 
 sub main {
-    my $fibos = [1, 2];
+    my @fibos = (1, 2);
     my $sum = 0;
-    map { $sum += $_ } grep { $_ % 2 == 0 } @{ fibo($fibos) };
+    map { $sum += $_ } grep { $_ % 2 == 0 } fibo(@fibos);
     say $sum;
 }
 
 sub fibo {
-    my $fibos = shift;
+    my @fibos = @_;
 
-    my $next_fibo = $fibos->[-1] + $fibos->[-2];
-    return $fibos if $next_fibo > $limit;
-    push @{ $fibos} => $next_fibo;
-    fibo($fibos);
+    my $next_fibo = $fibos[-1] + $fibos[-2];
+    return @fibos if $next_fibo > $limit;
+    push @fibos => $next_fibo;
+    fibo(@fibos);
 }
 
 
