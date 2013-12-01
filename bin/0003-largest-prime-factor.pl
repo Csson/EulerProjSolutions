@@ -30,27 +30,28 @@ sub main {
 
 sub get_factors {
     my $primes = shift;
-    my @numbers_to_divide = ($arg_factorof);
+    my $number = $arg_factorof;
     my @factors = ();
     
     say 'Searching for prime factors.';
-
+    
     NUMBER:
-    foreach my $index (0 .. scalar @numbers_to_divide - 1) {
-        my $number = $numbers_to_divide[ $index ];
-        say '----';
+    while($number > 1) {
+    	say '----';
         say "Number: $number";
-        PRIME:
+
         foreach my $prime (@{ $primes }) {
                 
             if($number % $prime == 0) {
-                splice @numbers_to_divide, $index, 1, $number / $prime;
+                $number /= $prime;
                 push @factors => $prime;
                 say "Factors: " . join ', ' => @factors;
+                last NUMBER if $number == 1;
                 redo NUMBER;
             }
         }
     }
+
     say ' = =' x 10;
     return @factors;
 }
