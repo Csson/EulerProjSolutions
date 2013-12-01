@@ -37,7 +37,7 @@ sub get_factors {
     
     NUMBER:
     while($number > 1) {
-    	say '----';
+        say '----';
         say "Number: $number";
 
         foreach my $prime (@{ $primes }) {
