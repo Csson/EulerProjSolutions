@@ -11,11 +11,11 @@ main();
 say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
 
 sub main {
-	my $highest = { sum => 0, i => 0, j => 0 };
-	
+    my $highest = { sum => 0, i => 0, j => 0 };
+    
     PALINDROME:
     foreach my $i (reverse 100 .. 999) {
-    	last PALINDROME if $i * $i < $highest->{'sum'};
+        last PALINDROME if $i * $i < $highest->{'sum'};
         foreach my $j (reverse 100 .. $i) {
             my $sum = $i * $j;
             if($sum eq reverse ($sum) && $sum > $highest->{'sum'}) {
