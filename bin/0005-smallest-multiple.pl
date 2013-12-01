@@ -17,14 +17,14 @@ sub main {
     my %found = ();
     NUMBER:
     while(++$number) {
-    	foreach my $div (1 .. $limit) {
-    		next NUMBER if $number % $div != 0;
-    		if(!exists $found{$div}) {
-    			$found{$div} = $number;
-    			say "$div: $number";
-    		}
-    	}
-    	last NUMBER;
+        foreach my $div (1 .. $limit) {
+            next NUMBER if $number % $div != 0;
+            if(!exists $found{$div}) {
+                $found{$div} = $number;
+                say "$div: $number";
+            }
+        }
+        last NUMBER;
     }
     say "Lowest number evenly divisible by every number 1..$limit: " . $number;
     
