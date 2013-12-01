@@ -23,24 +23,24 @@ sub main {
     map { $factors->{ $_ } = [] } @{ $primes };
     
     foreach my $number (1 .. $arg_upto) {
-    	my %number_factors = ();
+        my %number_factors = ();
         
         foreach my $factor (get_factors($number, $primes)) {
-        	$number_factors{ $factor } = 0 if !exists $number_factors{ $factor };
+            $number_factors{ $factor } = 0 if !exists $number_factors{ $factor };
             ++$number_factors{ $factor };
         }
         
         foreach my $factor (keys %number_factors) {
-        	while(scalar @{ $factors->{ $factor } } < $number_factors{ $factor }) {
-        		push @{ $factors->{ $factor } } => $factor;
-        	}
+            while(scalar @{ $factors->{ $factor } } < $number_factors{ $factor }) {
+                push @{ $factors->{ $factor } } => $factor;
+            }
         }
     }
     
     my @all = ();
     my $sum = 1;
     foreach my $fact (keys %{ $factors }) {
-    	push @all => @{ $factors->{ $fact }};
+        push @all => @{ $factors->{ $fact }};
     }
     map { $sum *= $_ } @all;
     say join (' * ' => sort { $a <=> $b } @all) . " = $sum";
