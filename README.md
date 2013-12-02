@@ -60,6 +60,243 @@ Status: Solved
     user    0m0.040s
     sys     0m0.012s
 
+## Problem 3
+
+Status: Solved, but could have better prime calculations.
+
+### Timings
+
+    $ time ./0003-largest-prime-factor.pl 
+    Largest of the *** prime factors (***) of 600851475143: ***
+
+    real    0m0.149s
+    user    0m0.096s
+    sys     0m0.012s
+
+
+
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+## Problem 
+
+Status: 
+
+### Timings
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
