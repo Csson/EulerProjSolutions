@@ -118,11 +118,33 @@ Status: Solved, but primes...
 
 
 
-## Problem 
+## Problem 6
 
-Status: 
+Status: Solved
 
 ### Timings
+
+    $ time ./0006-sum-square-difference.pl
+    The difference between the sum of squares and square of sum for numbers <= 100 is ***
+
+    real    0m0.008s
+    user    0m0.000s
+    sys     0m0.004s
+
+    $ time ./0006-sum-square-difference.pl 10000
+    The difference between the sum of squares and square of sum for numbers <= 10000 is 2500166641665000
+
+    real    0m0.931s
+    user    0m0.728s
+    sys     0m0.024s
+
+    $ time ./0006-sum-square-difference.pl 50000
+    The difference between the sum of squares and square of sum for numbers <= 50000 is 1562520832708325000
+
+    real    0m4.386s
+    user    0m3.596s
+    sys     0m0.056s
+
 
 
 ## Problem 
