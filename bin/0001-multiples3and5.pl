@@ -4,13 +4,11 @@ use strict;
 use warnings;
 use feature 'say';
 
-main();
+my $limit = $ARGV[0] // 1000;
 
-sub main {
-	my $sum = 0;
-	map { $sum += $_ } grep { $_ % 3 == 0 || $_ % 5 == 0 } (1 .. 999);
-	say $sum;
-}
+my $sum = 0;
+map { $sum += $_ } grep { $_ % 3 == 0 || $_ % 5 == 0 } (1 .. $limit - 1);
+say "Multiples of all multiples of 3 or 5 less than $limit: $sum";
 
 
 =pod
