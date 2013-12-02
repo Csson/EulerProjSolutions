@@ -73,22 +73,49 @@ Status: Solved, but could have better prime calculations.
     user    0m0.096s
     sys     0m0.012s
 
+## Problem 4
 
-
-
-
-## Problem 
-
-Status: 
+Status: Solved
 
 ### Timings
 
+    $ time ./0004-largest-palindrome-product.pl 
+    993 * 913 = 906609
 
-## Problem 
+    real    0m0.025s
+    user    0m0.016s
+    sys     0m0.004s
 
-Status: 
+
+## Problem 5
+
+Status: Solved, but primes...
 
 ### Timings
+
+    $ time ./0005-smallest-multiple.pl 
+    The smallest number divisible by every number from 1 to 20 = ***
+
+    real    0m0.097s
+    user    0m0.028s
+    sys     0m0.028s
+
+
+    $ time ./0005-smallest-multiple.pl 1000
+    The smallest number divisible by every number from 1 to 1000 = 71288652746650930 [ ... 400 digits ... ] 7950931603520000
+
+    real    0m1.946s
+    user    0m1.580s
+    sys     0m0.028s
+
+
+    time ./0005-smallest-multiple.pl 20000
+    The smallest number divisible by every number from 1 to 20000 = 487932562728827051 [ ... 8600 digits ... ] 547411295098112000000
+
+    real    4m2.742s
+    user    3m24.856s
+    sys     0m1.408s
+
 
 
 ## Problem 

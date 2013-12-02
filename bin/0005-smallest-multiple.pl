@@ -2,52 +2,38 @@
 
 use strict;
 use warnings;
-use v5.18;
+use feature 'say';
 use bigint;
 
-use Getopt::Long;
-use Time::HiRes qw/time tv_interval/;
+my $upto = $ARGV[0] // 20;
 
-my $start = [ time ];
 
-my $arg_upto = 20;
-
-GetOptions('upto=i' => \$arg_upto) or die ("Getoptions: $!");
-
-main();
-say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
-
-sub main {
-    my $primes = get_primes();
-    my $factors = {};
-    map { $factors->{ $_ } = [] } @{ $primes };
+my $primes = get_primes();
+my $factors = {};
+map { $factors->{ $_ } = [] } @{ $primes };
     
-    foreach my $number (1 .. $arg_upto) {
-        my %number_factors = ();
-        
-        foreach my $factor (get_factors($number, $primes)) {
-            $number_factors{ $factor } = 0 if !exists $number_factors{ $factor };
-            ++$number_factors{ $factor };
-        }
-        
-        foreach my $factor (keys %number_factors) {
-            while(scalar @{ $factors->{ $factor } } < $number_factors{ $factor }) {
-                push @{ $factors->{ $factor } } => $factor;
-            }
-        }
+foreach my $number (1 .. $upto) {
+    my %number_factors = ();
+    
+    foreach my $factor (get_factors($number, $primes)) {
+         $number_factors{ $factor } = 0 if !exists $number_factors{ $factor };
+         ++$number_factors{ $factor };
     }
     
-    my @all = ();
-    my $sum = 1;
-    foreach my $fact (keys %{ $factors }) {
-        push @all => @{ $factors->{ $fact }};
+    foreach my $factor (keys %number_factors) {
+        while(scalar @{ $factors->{ $factor } } < $number_factors{ $factor }) {
+            push @{ $factors->{ $factor } } => $factor;
+        }
     }
-    map { $sum *= $_ } @all;
-    say join (' * ' => sort { $a <=> $b } @all) . " = $sum";
-    
-        
-
 }
+    
+my @all = ();
+my $sum = 1;
+foreach my $fact (keys %{ $factors }) {
+    push @all => @{ $factors->{ $fact }};
+}
+map { $sum *= $_ } sort { $a <=> $b } @all;
+say "The smallest number divisible by every number from 1 to $upto = $sum";
 
 sub get_factors {
     my $number = shift;
@@ -76,10 +62,10 @@ sub get_factors {
 sub get_primes {
     my $primes = [2];
     
-    #say "Getting primes <= $arg_upto";
+    #say "Getting primes <= $upto";
     
     NUMBER:
-    foreach my $number (3 .. $arg_upto) {
+    foreach my $number (3 .. $upto) {
         
         PRIME:
         foreach my $prime (@{ $primes }) {

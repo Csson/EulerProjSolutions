@@ -2,25 +2,16 @@
 
 use strict;
 use warnings;
-use v5.18;
+use feature 'say';
 
-use Time::HiRes qw/time tv_interval/;
+my $upto = $ARGV[0] // 100;
 
-my $start = [ time ];
-
-my $arg_upto = $ARGV[0] // 10;
-
-main();
-
-say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
-
-sub main {
-    my $sum_of_squares = 0;
-    my $square_of_sum = 0;
-    map { $sum_of_squares += $_**2; $square_of_sum += $_ } (1 .. $arg_upto);
+my $sum_of_squares = 0;
+my $square_of_sum = 0;
+map { $sum_of_squares += $_**2; $square_of_sum += $_ } (1 .. $upto);
     
-    say 'Difference: ' . ($square_of_sum**2 - $sum_of_squares); 
-}
+say sprintf "The difference between the sum of squares and square of sum for numbers <= %d is %d" => $upto, ($square_of_sum**2 - $sum_of_squares); 
+
 
 =pod
 

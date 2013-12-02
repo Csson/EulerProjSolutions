@@ -2,31 +2,23 @@
 
 use strict;
 use warnings;
-use v5.18;
+use feature 'say';
 
-use Time::HiRes qw/time tv_interval/;
-
-my $start = [ time ];
-main();
-say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
-
-sub main {
-    my $highest = { sum => 0, i => 0, j => 0 };
+my $highest = { sum => 0, i => 0, j => 0 };
     
-    PALINDROME:
-    foreach my $i (reverse 100 .. 999) {
-        last PALINDROME if $i * $i < $highest->{'sum'};
-        foreach my $j (reverse 100 .. $i) {
-            my $sum = $i * $j;
-            if($sum eq reverse ($sum) && $sum > $highest->{'sum'}) {
-                $highest = { i => $i, j => $j, sum => $sum };
-                next PALINDROME;
-            }
+PALINDROME:
+foreach my $i (reverse 100 .. 999) {
+    last PALINDROME if $i * $i < $highest->{'sum'};
+    foreach my $j (reverse 100 .. $i) {
+        my $sum = $i * $j;
+        if($sum eq reverse ($sum) && $sum > $highest->{'sum'}) {
+            $highest = { i => $i, j => $j, sum => $sum };
+            next PALINDROME;
         }
     }
-
-    say "$highest->{'i'} * $highest->{'j'} = $highest->{'sum'}";
 }
+say "$highest->{'i'} * $highest->{'j'} = $highest->{'sum'}";
+
 
 
 =pod
