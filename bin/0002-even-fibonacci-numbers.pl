@@ -2,22 +2,17 @@
 
 use strict;
 use warnings;
-use v5.18;
-
-use Time::HiRes qw/time tv_interval/;
+use feature 'say';
+use bigint;
 
 my $limit = $ARGV[0] // 4_000_000;
 
-my $start = [ time ];
-main();
-say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
+my @fibos = (1, 2);
+my $sum = 0;
+my $count = 0;
+map { $sum += $_; ++$count; } grep { $_ % 2 == 0 } fibo(@fibos);
+say "Sum of the $count even-valued fibonaccis < $limit: $sum";
 
-sub main {
-    my @fibos = (1, 2);
-    my $sum = 0;
-    map { $sum += $_ } grep { $_ % 2 == 0 } fibo(@fibos);
-    say $sum;
-}
 
 sub fibo {
     my @fibos = @_;
