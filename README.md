@@ -80,7 +80,7 @@ Status: Solved
 ### Timings
 
     $ time ./0004-largest-palindrome-product.pl 
-    993 * 913 = 906609
+    993 * 913 = ***
 
     real    0m0.025s
     user    0m0.016s
