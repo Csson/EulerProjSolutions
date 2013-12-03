@@ -153,8 +153,8 @@ Status: Solved, but slow (and primes)
 
 ### Timings
 
-$ time ./0007-nth-prime.pl 
-The 10001 prime number is ***
+    $ time ./0007-nth-prime.pl 
+    The 10001 prime number is ***
 
     real    0m6.335s
     user    0m5.268s
