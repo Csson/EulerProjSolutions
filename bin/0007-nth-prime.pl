@@ -2,33 +2,26 @@
 
 use strict;
 use warnings;
-use v5.18;
-
-use Time::HiRes qw/time tv_interval/;
-
-my $start = [ time ];
+use feature 'say';
 
 my $nth_prime = $ARGV[0] // 10001;
-main();
-say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
 
-sub main {
-    my @primes = (2);
+my @primes = (2);
     
-    my $number = 2;
+my $number = 2;
     
-    NUMBER:
-    while(++$number) {
+NUMBER:
+while(++$number) {
         
-        PRIME:
-        foreach my $prime (@primes) {
-            next NUMBER if $number % $prime == 0;
-        }
-        push @primes => $number;
-        last NUMBER if scalar @primes == $nth_prime;
+    PRIME:
+    foreach my $prime (@primes) {
+        next NUMBER if $number % $prime == 0;
     }
-    say "The $nth_prime prime number is $number";
+    push @primes => $number;
+    last NUMBER if scalar @primes == $nth_prime;
 }
+say "The $nth_prime prime number is $number";
+
 
 =pod
 

@@ -147,32 +147,68 @@ Status: Solved
 
 
 
-## Problem 
+## Problem 7
 
-Status: 
-
-### Timings
-
-
-## Problem 
-
-Status: 
+Status: Solved, but slow (and primes)
 
 ### Timings
 
+$ time ./0007-nth-prime.pl 
+The 10001 prime number is ***
 
-## Problem 
+    real    0m6.335s
+    user    0m5.268s
+    sys     0m0.064s
 
-Status: 
+
+    $ time ./0007-nth-prime.pl 20000
+    The 20000 prime number is 224737
+
+    real    0m25.730s
+    user    0m21.632s
+    sys     0m0.172s
+
+
+## Problem 8
+
+Status: Solved
 
 ### Timings
 
+    $ time ./0008-largest-product-in-a-series.pl 
+    Highest product of five consecutive numbers = ***
 
-## Problem 
+    real    0m0.009s
+    user    0m0.004s
+    sys     0m0.000s
 
-Status: 
+
+## Problem 9
+
+Status: Solved
 
 ### Timings
+
+    $ time ./0009-special-pythagorean-triplet.pl 
+    The product is *** (???**2 + ???**2 = ???**2)
+
+    real    0m0.129s
+    user    0m0.076s
+    sys     0m0.004s
+
+
+## Problem 10
+
+Status: Correct, but too slow (primes)
+
+### Timings
+
+    $ time ./0010-summation-of-primes.pl
+    The sum of all primes < 2000000 is 142913828922
+
+    real    27m24.746s
+    user    21m55.948s
+    sys     0m14.952s
 
 
 ## Problem 
