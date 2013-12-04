@@ -2,60 +2,51 @@
 
 use strict;
 use warnings;
-use v5.18;
+use feature 'say';
 
-use Data::Dumper;
-use Time::HiRes qw/time tv_interval/;
+my $grid = get_grid();
 
-my $start = [ time ];
-main();
-say 'Done in ' . sprintf ('%.5f' => tv_interval $start) . ' seconds.';
+my $maxes = { horizontal => 0,
+              vertical   => 0,
+              rightup    => 0,
+              rightdown  => 0,
+            };
 
-sub main {
-    my $grid = get_grid();
-    
-    my $maxes = { horizontal => 0,
-                  vertical   => 0,
-                  rightup    => 0,
-                  rightdown  => 0,
-                };
-    
-    foreach my $row (0 .. scalar @{ $grid } - 1) {
+foreach my $row (0 .. scalar @{ $grid } - 1) {
+	
+    foreach my $column (0 .. scalar @{ $grid->[ $row ] } - 1) {
         
-        foreach my $column (0 .. scalar @{ $row } - 1) {
+        if($row < scalar @{ $grid } - 4) {
+            my $vert = 1;
+            map { $vert *= $grid->[$_][ $column ] } ($row, $row + 1, $row + 2, $row + 3);
+            $maxes->{'vertical'} = $vert if $vert > $maxes->{'vertical'};
             
-            if($row < scalar @{ $grid } - 4) {
-                my $vert = 1;
-                map { $vert *= $grid->[$_][ $column ] } ($row, $row + 1, $row + 2, $row + 3);
-                $maxes->{'vertical'} = $vert if $vert > $maxes->{'vertical'};
-                
-                if($column < scalar @{ $grid->[$row]} - 4) {
-                    my $rightdown = $grid->[ $row ][ $column ] 
-                                  * $grid->[ $row + 1 ][ $column + 1 ] 
-                                  * $grid->[ $row + 2 ][ $column + 2 ] 
-                                  * $grid->[ $row + 3 ][ $column + 3 ];
-                    $maxes->{'rightdown'} = $rightdown if $rightdown > $maxes->{'rightdown'};
-                }
-            }
             if($column < scalar @{ $grid->[$row]} - 4) {
-                my $horiz = 1;
-                map { $horiz *= $grid->[$row][ $_ ] } ($column, $column + 1, $column + 2, $column + 3);
-                $maxes->{'horizontal'} = $horiz if $horiz > $maxes->{'horizontal'};
-                
-                if($row >= 3) {
-                    my $rightup = $grid->[ $row ][ $column ] 
-                                * $grid->[ $row - 1 ][ $column + 1 ] 
-                                * $grid->[ $row - 2 ][ $column + 2 ] 
-                                * $grid->[ $row - 3 ][ $column + 3 ];
-                    $maxes->{'rightup'} = $rightup if $rightup > $maxes->{'rightup'};
-                }
+                my $rightdown = $grid->[ $row ][ $column ] 
+                              * $grid->[ $row + 1 ][ $column + 1 ] 
+                              * $grid->[ $row + 2 ][ $column + 2 ] 
+                              * $grid->[ $row + 3 ][ $column + 3 ];
+                $maxes->{'rightdown'} = $rightdown if $rightdown > $maxes->{'rightdown'};
+            }
+        }
+        if($column < scalar @{ $grid->[$row]} - 4) {
+            my $horiz = 1;
+            map { $horiz *= $grid->[$row][ $_ ] } ($column, $column + 1, $column + 2, $column + 3);
+            $maxes->{'horizontal'} = $horiz if $horiz > $maxes->{'horizontal'};
+            
+            if($row >= 3) {
+                my $rightup = $grid->[ $row ][ $column ] 
+                            * $grid->[ $row - 1 ][ $column + 1 ] 
+                            * $grid->[ $row - 2 ][ $column + 2 ] 
+                            * $grid->[ $row - 3 ][ $column + 3 ];
+                $maxes->{'rightup'} = $rightup if $rightup > $maxes->{'rightup'};
             }
         }
     }
-    
-    say Dumper $maxes;
-    say "Largest product of four: " . (sort { $b <=> $a } map { $maxes->{ $_ }} keys %{ $maxes})[0];
 }
+
+say "Largest product of four: " . (sort { $b <=> $a } map { $maxes->{ $_ }} keys %{ $maxes})[0];
+
 
 
 sub get_grid {
