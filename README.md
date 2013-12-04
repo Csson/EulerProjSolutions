@@ -203,12 +203,20 @@ Status: Solved
 
 ### Timings
 
-    $ time ./0010-summation-of-primes.pl
+    $ time ./0010-summation-of-primes.pl 2000000
     The sum of all primes < 2000000 is ***
 
-    real    27m24.746s
-    user    21m55.948s
-    sys     0m14.952s
+    real    0m6.912s
+    user    0m5.392s
+    sys     0m0.176s
+
+    $ time ./0010-summation-of-primes.pl 10000000
+    The sum of all primes < 10000000 is 3203324994356
+
+    real    0m45.376s
+    user    0m35.628s
+    sys     0m0.900s
+
 
 
 ## Problem 
