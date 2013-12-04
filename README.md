@@ -204,7 +204,7 @@ Status: Solved
 ### Timings
 
     $ time ./0010-summation-of-primes.pl
-    The sum of all primes < 2000000 is 142913828922
+    The sum of all primes < 2000000 is ***
 
     real    27m24.746s
     user    21m55.948s
