@@ -199,7 +199,7 @@ Status: Solved
 
 ## Problem 10
 
-Status: Correct, but too slow (primes)
+Status: Solved
 
 ### Timings
 
