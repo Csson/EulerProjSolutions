@@ -351,11 +351,26 @@ Status: Solved
     user    0m0.004s
     sys     0m0.000s
 
-## Problem 
+## Problem 19
 
-Status: 
+Status: Solved
 
 ### Timings
+
+    $ time ./0019-counting-sundays.pl 
+    The number on Sundays happening on the first of the month during the 20th century is ***.
+
+    real    0m0.167s
+    user    0m0.128s
+    sys     0m0.000s
+
+
+    $ time ./0019-counting-sundays-datetime.pl 
+    The number on Sundays happening on the first of the month during the 20th century is ***.
+
+    real    0m1.554s
+    user    0m1.368s
+    sys     0m0.024s
 
 
 ## Problem 
