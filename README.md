@@ -372,11 +372,43 @@ Status: Solved
 
 
 
-## Problem 
+## Problem 20
 
-Status: 
+Status: Solved
 
 ### Timings
+
+    $ time ./0020-factorial-digit-sum.pl 
+    The factorial 100 is ???
+    The sum of the digits in the number 100! is ***
+
+    real    0m0.096s
+    user    0m0.060s
+    sys     0m0.000s
+
+    $ time ./0020-factorial-digit-sum.pl 1000
+    The factorial 1000 is 4023872600770937735437024339230039857193748642107146325437999104299 [ ... 2500 digits ... ]
+    The sum of the digits in the number 1000! is 10539
+
+    real    0m0.249s
+    user    0m0.188s
+    sys     0m0.004s
+
+    $ time ./0020-factorial-digit-sum.pl 10000
+    The factorial 10000 is 2846259680917054518906413212119868890148051401702799230 [ ... 35600 digits ... ]
+    The sum of the digits in the number 10000! is 149346
+
+    real    0m6.355s
+    user    0m5.732s
+    sys     0m0.032s
+
+    $ time ./0020-factorial-digit-sum.pl 20000
+    The factorial 20000 is 1819206320230345134827641756866 [ ... 77300 digits ... ]
+    The sum of the digits in the number 20000! is 325494
+
+    real    0m33.231s
+    user    0m22.800s
+    sys     0m0.260s
 
 
 ## Problem 
