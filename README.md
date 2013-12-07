@@ -256,12 +256,19 @@ Status: Solved
     sys     0m0.008s
 
 
-## Problem 
+## Problem 14
 
-Status: 
+Status: Correct answer, but slow.
 
 ### Timings
 
+    $ time ./0014-longest-collatz-sequence.pl
+    The number with longest Collatz sequence (524) starting under 1000000 is ***:
+    maximum depth reached was 525
+
+    real    3m26.452s
+    user    2m59.712s
+    sys     0m1.528s
 
 ## Problem 
 
