@@ -364,13 +364,12 @@ Status: Solved
     user    0m0.128s
     sys     0m0.000s
 
+    $ time ./0019-counting-sundays-datetime.pl The number on Sundays happening on the first of the month during the 20th century is 171.
 
-    $ time ./0019-counting-sundays-datetime.pl 
-    The number on Sundays happening on the first of the month during the 20th century is ***.
+    real    0m1.494s
+    user    0m1.332s
+    sys     0m0.028s
 
-    real    0m1.554s
-    user    0m1.368s
-    sys     0m0.024s
 
 
 ## Problem 
