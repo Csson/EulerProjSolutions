@@ -11,13 +11,14 @@ my $first_sunday_dates = [];
 SEARCH:
 while(1) {
 
-    $date->add(days => 7);
-    last SEARCH if $date->year > 2000;
-
     if($date->year >= 1901 && $date->year <= 2000 && $date->day_of_month == 1) {
         push @{ $first_sunday_dates } => $date;
-        $date->add(days => 21);
+        $date->add(days => 28);
     }
+    else {
+        $date->add(days => 7);
+    }
+    last SEARCH if $date->year > 2000;
 }
 
 say sprintf "The number on Sundays happening on the first of the month during the 20th century is %d." => scalar @{ $first_sunday_dates };
