@@ -323,11 +323,19 @@ Status: Solved
     user    0m0.900s
     sys     0m0.020s
 
-## Problem 
+## Problem 17
 
-Status: 
+Status: Solved
 
 ### Timings
+
+    $ time ./0017-number-letter-counts.pl 
+    The number of letters in every number from 1 to 1000 is 21124
+
+    real    0m0.009s
+    user    0m0.000s
+    sys     0m0.004s
+
 
 
 ## Problem 
