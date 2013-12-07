@@ -248,8 +248,8 @@ Status: Solved
 ### Timings
 
     $ time ./0013-large-sum.pl 
-    The full sum is 5537376230390876637302048746832985971773659831892672
-    The first ten digits is 5537376230
+    The full sum is ***
+    The first ten digits is ***
 
     real    0m0.070s
     user    0m0.036s
