@@ -270,11 +270,35 @@ Status: Correct answer, but slow.
     user    2m59.712s
     sys     0m1.528s
 
-## Problem 
 
-Status: 
+## Problem 15
+
+Status: Solved
 
 ### Timings
+
+    (without bigint)
+    $ time ./0015-lattice-paths.pl 
+    Number of routes through a grid with a side of 20: ***
+
+    real    0m0.007s
+    user    0m0.004s
+    sys     0m0.000s
+
+    (with bigint)
+    $ time ./0015-lattice-paths.pl 100
+    Number of routes through a grid with a side of 100: 90548514656103281165404177077484163874504589675413336841320
+
+    real    0m1.166s
+    user    0m1.008s
+    sys     0m0.028s
+
+    $ time ./0015-lattice-paths.pl 500
+    Number of routes through a grid with a side of 500: 270288240945436569515614693625975275496152008446548287007392875106625428705522193898612483924502370165362606085021546104802209750050679917549894219699518475423665484263751733356162464079737887344364574161119497604571044985756287880514600994219426752366915856603136862602484428109296905863799821216320
+
+    real    0m29.819s
+    user    0m26.148s
+    sys     0m0.492s
 
 
 ## Problem 
