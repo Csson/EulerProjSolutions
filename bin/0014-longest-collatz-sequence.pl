@@ -52,24 +52,6 @@ sub partition {
 	}
 	
 }
-=pod
-foreach my $number (500000 .. $limit) {
-	if($number % ($arg_limit / 100) == 0) {
-        say ' ' x 30 . $number;
-        say ' ' x 40 . $maxdepth;
-	}
-    my $sequence = collatz($number, []);
-    $collatzes->{ $number } = $sequence;
-    if(scalar @{ $sequence } > scalar @{ $max->{'sequence'} }) {
-    	$max = { number => $number,
-    		     sequence => $sequence,
-    	       };
-    }
-    
-}
-=cut
-say 'done';
-#my $longest_number = (sort { scalar @{ $collatzes->{ $b } } <=> scalar @{ $collatzes->{ $a } } } keys %{ $collatzes })[0];
 
 say sprintf "The number with longest Collatz sequence (%d) starting under %d is %d:" => scalar @{ $max->{'sequence'}},
                                                                                         $limit + 1,
