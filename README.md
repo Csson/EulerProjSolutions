@@ -338,12 +338,18 @@ Status: Solved
 
 
 
-## Problem 
+## Problem 18
 
-Status: 
+Status: Solved
 
 ### Timings
 
+    $ time ./0018-maximum-path-sum-i.pl 
+    The maximum total through the pyramid is ***
+
+    real    0m0.006s
+    user    0m0.004s
+    sys     0m0.000s
 
 ## Problem 
 
