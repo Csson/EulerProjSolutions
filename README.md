@@ -303,7 +303,7 @@ Status: Solved
 
 ## Problem 16
 
-Status: Status
+Status: Solved
 
 ### Timings
 
