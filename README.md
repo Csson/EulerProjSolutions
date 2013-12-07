@@ -330,7 +330,7 @@ Status: Solved
 ### Timings
 
     $ time ./0017-number-letter-counts.pl 
-    The number of letters in every number from 1 to 1000 is 21124
+    The number of letters in every number from 1 to 1000 is ***
 
     real    0m0.009s
     user    0m0.000s
