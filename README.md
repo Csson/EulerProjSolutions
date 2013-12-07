@@ -226,7 +226,7 @@ Status: Solved
 ### Timings
 
     $ time ./0011-largest-product-in-a-grid.pl 
-    Largest product of four: 70600674
+    Largest product of four: ***
 
     real    0m0.010s
     user    0m0.000s
