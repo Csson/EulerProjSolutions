@@ -301,12 +301,27 @@ Status: Solved
     sys     0m0.492s
 
 
-## Problem 
+## Problem 16
 
-Status: 
+Status: Status
 
 ### Timings
 
+    $ time ./0016-power-digit-sum.pl 
+    2 to the power of 1000 is : ???
+    The sum of the numbers of 2**1000 is ***
+
+    real    0m0.090s
+    user    0m0.048s
+    sys     0m0.008s
+
+    $ time ./0016-power-digit-sum.pl 50000
+    2 to the power of 50000 is : 316069943685631 [ ... 15000 digits ... ] 131085235835109376
+    The sum of the numbers of 2**50000 is 67585
+
+    real    0m1.049s
+    user    0m0.900s
+    sys     0m0.020s
 
 ## Problem 
 
