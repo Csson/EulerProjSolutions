@@ -469,11 +469,18 @@ Status: Solved, but a little slow (and should be recursive)
     sys     0m0.012s
 
 
-## Problem 
+## Problem 25
 
-Status: 
+Status: Solved
 
 ### Timings
+
+    $ time ./0025-1000-digit-fibonacci-number.pl
+    The term of the first Fibonacci number with 1000 digits is 47***
+
+    real    0m0.799s
+    user    0m0.604s
+    sys     0m0.040s
 
 
 ## Problem 
