@@ -426,11 +426,19 @@ Status: Solved, but slow
     sys     0m0.044s
 
 
-## Problem 
+## Problem 22
 
-Status: 
+Status: Solved
 
 ### Timings
+
+    $ time ./0022-names-scores.pl 
+    The total score of all names in the file is 87***
+
+    real    0m0.037s
+    user    0m0.028s
+    sys     0m0.000s
+
 
 
 ## Problem 
