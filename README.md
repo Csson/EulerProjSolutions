@@ -441,11 +441,18 @@ Status: Solved
 
 
 
-## Problem 
+## Problem 23
 
-Status: 
+Status: Solved, but a little slow
 
 ### Timings
+
+    $ time ./0023-non-abundant-sums.pl 
+    The sum of all integers that are not the sum of two abundant numbers is 41***
+
+    real    0m56.951s
+    user    0m50.856s
+    sys     0m0.244s
 
 
 ## Problem 
