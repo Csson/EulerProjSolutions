@@ -65,7 +65,6 @@ foreach my $n1 (@numbers) {
                                             say "The $count lexicographic permutation of 0123456789 is: " . join '' => ($n1, $n2, $n3, $n4, $n5, $n6, $n7, $n8, $n9, $n10);
                                             last PERMUTE;
                                         }
-                
                                     }
                                 }
                             }
@@ -76,35 +75,6 @@ foreach my $n1 (@numbers) {
         }
     }
 }
-sub permute {
-    my $numbers = shift;
-    
-    #foreach my $number 
-}
-
-
-#foreach my $n1 (@numbers) {
-#    my @numbers1 = @numbers;
-#    my ($index) = grep { $numbers1[ $_ ] == $n1 } 0..$#numbers1;
-#    splice @numbers1, $index, 1;
-#    print $n1;
-#    
-#    foreach my $n2 (@numbers) {
-#        my @numbers2 = @numbers1;
-#        my ($index) = grep { $numbers2[ $_ ] == $n2 } 0..$#numbers2;
-#        splice @numbers2, $index, 1;
-#        print $n2;
-#        foreach my $n3 (@numbers) {
-#            my @numbers3 = @numbers2;
-#            my ($index) = grep { $numbers3[ $_ ] == $n3 } 0..$#numbers3;
-#            splice @numbers3, $index, 1;
-#            print "$n3\n";
-#            say '--';
-#        }
-#    }
-#}
-
-
 
 =pod
 
