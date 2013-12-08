@@ -455,11 +455,18 @@ Status: Solved, but a little slow
     sys     0m0.244s
 
 
-## Problem 
+## Problem 24
 
-Status: 
+Status: Solved, but a little slow (and should be recursive)
 
 ### Timings
+
+    $ time ./0024-lexicographic-permutations.pl 
+    The 1000000 lexicographic permutation of 0123456789 is: 278***
+
+    real    0m4.119s
+    user    0m3.604s
+    sys     0m0.012s
 
 
 ## Problem 
