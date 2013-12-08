@@ -411,11 +411,19 @@ Status: Solved
     sys     0m0.260s
 
 
-## Problem 
+## Problem 21
 
-Status: 
+Status: Solved, but slow
 
 ### Timings
+
+    $ time ./0021-amicable-numbers.pl 
+    All amicable numbers below 10000: ....
+    The sum of all amicable numbers under 10000 is ***
+
+    real    0m15.700s
+    user    0m14.164s
+    sys     0m0.044s
 
 
 ## Problem 
