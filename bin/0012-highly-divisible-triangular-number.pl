@@ -13,60 +13,60 @@ my $highest = { number => 0, divisors => 0 };
 
 TRIANGLE:
 while(++$increase) {
-	$number += $increase;
-	
-	my $try = 0;
-	DIVISOR:
-	foreach my $divisor (keys %{ $divisors_for }) {
-		if($number % $divisor == 0) {
-    		++$try;
-		}
-	}
-	next TRIANGLE if $try < 70;
-	
-	my $trydiv = 0;
-	my $divcount = 0;
-	
-	TRYDIV:
-	while(++$trydiv && $trydiv <= $number) {
-		next TRYDIV if $number % $trydiv != 0;
-		++$divcount;
-	}
-	if($divcount > $highest->{'divisors'}) {
-		$highest->{'divisors'} = $divcount;
-		$highest->{'number'} = $number;
-	}
+    $number += $increase;
+    
+    my $try = 0;
+    DIVISOR:
+    foreach my $divisor (keys %{ $divisors_for }) {
+        if($number % $divisor == 0) {
+            ++$try;
+        }
+    }
+    next TRIANGLE if $try < 70;
+    
+    my $trydiv = 0;
+    my $divcount = 0;
+    
+    TRYDIV:
+    while(++$trydiv && $trydiv <= $number) {
+        next TRYDIV if $number % $trydiv != 0;
+        ++$divcount;
+    }
+    if($divcount > $highest->{'divisors'}) {
+        $highest->{'divisors'} = $divcount;
+        $highest->{'number'} = $number;
+    }
 
-	last TRIANGLE if $divcount > 500;
+    last TRIANGLE if $divcount > 500;
 }
 
 say "The first triangle number with over 500 divisors is $number";
 
 sub get_divisors_for_all {
-	my $low = shift;
-	my $high = shift;
-	my $top = shift;
-	
-	my $divisors_for = {};
-	
-	foreach my $number ($low .. $high) {
-		
-		foreach my $div ($low .. $high) {
+    my $low = shift;
+    my $high = shift;
+    my $top = shift;
+    
+    my $divisors_for = {};
+    
+    foreach my $number ($low .. $high) {
+        
+        foreach my $div ($low .. $high) {
             my $is_divider = $number % $div == 0;
             
             if($is_divider) {
-            	if(!exists $divisors_for->{ $number }) {
-            		$divisors_for->{ $number } = [];
-            	}
-            	push @{ $divisors_for->{ $number } } => $div;
+                if(!exists $divisors_for->{ $number }) {
+                    $divisors_for->{ $number } = [];
+                }
+                push @{ $divisors_for->{ $number } } => $div;
             }
-		}
-	}
-	my $count = 0;
-	my $important_divisors = {};
-	map { $important_divisors->{ $_ } = $divisors_for->{ $_ } } (sort { scalar @{ $divisors_for->{ $b } } <=> scalar @{ $divisors_for->{ $a } } } keys %{ $divisors_for })[0..$top - 1 ];
-	
-	return $important_divisors;
+        }
+    }
+    my $count = 0;
+    my $important_divisors = {};
+    map { $important_divisors->{ $_ } = $divisors_for->{ $_ } } (sort { scalar @{ $divisors_for->{ $b } } <=> scalar @{ $divisors_for->{ $a } } } keys %{ $divisors_for })[0..$top - 1 ];
+    
+    return $important_divisors;
 }
 
 
@@ -92,9 +92,5 @@ Let us list the factors of the first seven triangle numbers:
 We can see that 28 is the first triangle number to have over five divisors.
 
 What is the value of the first triangle number to have over five hundred divisors?
-
-=cut
-
-
 
 =cut
