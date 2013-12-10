@@ -241,7 +241,7 @@ Status: Solved, but slow
 ### Timings
 
     $ time ./0012-highly-divisible-triangular-number.pl  
-    The first triangle number with over 500 divisors is 76576500
+    The first triangle number with over 500 divisors is 765***
 
     real    0m37.854s
     user    0m33.984s
